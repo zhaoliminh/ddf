@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+    struct point
+    {
+        int x;
+        int y;
+        struct point* next;
+    };
+    typedef struct point point;
+    point* nett;
+    point* p1 = malloc(sizeof(point));
+    point* p2 = malloc(sizeof(point));
+    point* p3 = malloc(sizeof(point));
+
+    nett->next = p1;
+
+    p1->x = 1;
+    p1->y = 1;
+    p1->next = p2;
+
+   p2->x = 2;
+    p2->y = 2;
+    p2->next = p3;
+
+    p3->x = 3;
+    p3->y = 3;
+    p3->next = NULL;
+    
+void pointall(point nett)
+    {
+        point pe;
+        pe = nett->next;
+        while(pe != NULL)
+        {
+            pe = pe->next;
+            
+        }
+        
+    }
+    
+    pointall(nett);
+    return 0;
+}
