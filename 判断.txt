@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+	int b;
+	int c;
+	printf("这一周工作了多少个小时:");
+	scanf("%d", &a);
+	printf("是否有加班，加班输入1，没有加班输入2:");
+	scanf("%d", &b);
+	
+	if (b == 1) {
+		printf("一共加了多少小时:");
+		scanf("%d", &c);
+		int d;
+		d = a * 10 + c * 15;
+		printf("%d\n", d);
+	}
+	if (b == 2) {
+		int e;
+		e = a * 10;
+		printf("%d\n",e);
+	}
+	return 0;
+}
