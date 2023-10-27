@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main(void)
+{
+	int counter =  0;
+	int halfpair = 0; 
+	char ch;
+	printf("please input chars( # for exit ):");
+	while ((ch = getchar()) != '#')
+	{
+		switch (ch) {
+		case 'e':
+			halfpair = 1;
+			break;
+			/*字符E的匹配标记*/
+		case 'i':
+			if (halfpair == 1) {
+				counter++;
+				halfpair = 0;
+				/*若匹配标记为1，表明前一个字符e已经匹配，若i匹配则计数，并清楚部分匹配标记*/
+				break;
+		default:
+			halfpair = 0;
+				/*无论字符而是否匹配，非e字符和非i字符均可清空部分匹配标记*/
+				
+			}
+		}
+	}
+	printf("\nTotally exist %d \'ei\' in all char!\n", counter);
+	printf("Done\n");
+	return 0;
+}
