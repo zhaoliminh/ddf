@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main(void) {
+	int i, j, num;
+	char c;
+	printf("Enter the cpre char you want print(A....Z):");
+	scanf("%c", &c);
+	char ch = 'A';
+	num =c - 'A' + 1;
+	/*输入字符的ACLL码减去‘A'加一得到十进制的结果num*/
+	/*/num即使需要打印的从A开始字符数，也是打印的总行数*/
+	for (i = 1; i <= num; i++)
+	{
+		/*外层循环控制打印行数，NUM为字符和A的差加1*/
+		for (j = 0; j < num - i; j++)
+		printf(" ");
+		/*打印空格，空格数为总字符数减去当前行营打印的字符数*/
+		for (ch = 'A'; j < num; j++)
+		printf("%c", ch++);
+		/*在打印正序字符时，需要通过ch做递增操作，起始值j在空格处已经通过循环
+		* 做了初始化，因此只打印剩余字符*/
+		for (j = 1, ch -= 2; j < i; j++, ch--)
+		printf("%c", ch);
+		printf("\n");
+	}
+	return 0;
+}
