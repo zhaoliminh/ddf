@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void)
+{
+	int words = 0;
+	int letter = 0;
+	char ch;
+	while ((ch = getchar()) != EOF)
+	{
+		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+			letter++;
+		/*除了可以利用字母在ASCLL码表连续的判断方法外，还可用
+		isalpha()函数进行判断，若ch是字母则返回非零值
+		if(isalpha(ch) != 0)  letter++;*/
+		if (ch == ' ' || ch == ',' || ch == '.' ||ch == '\n')
+			words++;
+		/*可以利用标点符号判断，上面的判断不够完整，括号，问号
+		也可以利用ASCLL码值表中符号的连续区进行判断。使用ispunct()
+		函数更加简便，但是该函数不能判断空格，需要取‘或’*/
+		
+	}
+	printf("There are %d words, and  %d character, %.2f C/W!\n", words, letter, 1.0 * letter / words);
+	return 0;
+}
